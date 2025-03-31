@@ -1,0 +1,642 @@
+/* Yleinen tyyli */
+body {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 400;
+}
+
+h1, h2 {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+p {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0a192f;
+    color: #cbd4f0;
+    padding-top: 80px;
+    font-size: 22px; /* Suurempi oletuskoko teksteille */
+  
+}
+/* Fade-in animaatio sivun latauksessa */
+body {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+}
+
+/* Fade-out animaatio sivulta poistuttaessa */
+body.fade-out {
+    animation: fadeOut 0.4s ease-out forwards;
+}
+
+
+/* Animaatiot */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Taustakuva */
+.project-section {
+    position: relative;
+    background: url('ai-generated-9311144.jpg') no-repeat center center/cover;
+    min-height: 100vh; /* Korjattu: minimi 100vh, mutta kasvaa sisällön mukana */
+    display: flex;
+    flex-direction: column; /* Jotta sisältö ei pakota taustaa kiinteään kokoon */
+    align-items: center;
+    justify-content: flex-start; /* Ei enää pakota kaikkea keskelle */
+    text-align: center;
+    padding: 50px 20px;
+    background-attachment: fixed; /* Tämä estää zoomautumisen */
+}
+.taustakuva2 { 
+    position: relative;
+    background: url('img/Flux_Dev_Digital_artwork_depicting_a_vibrant_cosmic_scene_The__3.jpeg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Tämä estää zoomautumisen */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Tummentava kerros */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   
+}
+
+/* Kelluva sisältö */
+.project-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    background: rgba(15, 30, 60, 0.4); /* Vähennettiin alpha-arvoa (0.8 -> 0.6) */
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    margin-top: 100px; /* Tämä nostaa koko laatikkoa ylöspäin */
+}
+
+
+/* Projektiosion tyyli, tämä muokkaa sisällön ettei se jää navbarin taakse */
+.project-section {
+    padding-top: 100px; /* Varmistaa, että kaikki näkyy */
+    padding-bottom: 10px; /* Lisää tilaa footerin yläpuolelle */
+}
+
+/* Projektikortit */
+.project {
+    background: rgba(15, 30, 60, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Karusellin ja tekstin yhdistetty taustalaatikko */
+.project-box {
+    background: rgba(10, 25, 47, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+/* Pienemmillä näytöillä (mobiili) tehdään hienosäätö */
+/* ✅ Korjaa projektien näkyvyys mobiilissa */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .project-box, .project {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Navigaatio */
+/* Navbar – kiinteä yläreunassa mutta ei peitä sisältöä */
+.navbar {
+    background: rgba(10, 25, 47, 0.2);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 0;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Rajdhani', sans-serif;
+    
+}
+
+
+/* Navbar muuttuu tummemmaksi vieritettäessä */
+.navbar.scrolled {
+    background: rgba(10, 25, 47, 0.6); /* Tummempi mutta edelleen läpinäkyvä */
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Navigaatiolinkit */
+.navbar-nav .nav-link {
+    color: #a8b2d1; /* Vaalean siniharmaa */
+    font-size: 20px; /* Suurempi oletuskoko teksteille */
+    transition: color 0.3s ease;
+    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+
+}
+
+/* Hover-efekti navigointilinkeille */
+.navbar-nav .nav-link:hover {
+    color: #a683e3; /* Violetti hover-väri */
+}
+
+/* Aktiivinen linkki */
+.navbar-nav .nav-link.active {
+    color: #a683e3;
+    font-weight: bold;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+/* Logon muotoilu */
+.navbar-brand img {
+    height: 70px;
+    width: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Logon hover-efekti */
+.navbar-brand img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+.nav-item{
+    font-size: 30px; /* Suurempi oletuskoko teksteille */
+    
+}
+
+/* Otsikot */
+h1, h2 {
+    color: #a683e3;
+    font-size: 25px; /* Suurempi oletuskoko teksteille */
+}
+
+
+/* Projektikortit */
+.project {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease;
+    text-align: center; /* Keskittää kaiken sisällön */
+    font-family: 'Rajdhani', sans-serif;
+   
+    min-height: 300px; /* Määritetään vähimmäiskorkeus */
+    justify-content: space-between; /* Jakaa sisällön tasaisesti */
+    }
+
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+/* Footeri – aina sumennettu ja läpinäkyvä */
+.footer {
+    background: rgba(10, 25, 47, 0.2); /* Läpinäkyvä tumma sävy */
+    backdrop-filter: blur(10px); /* Sumennus kaikille moderneille selaimille */
+    -webkit-backdrop-filter: blur(10px); /* Safari-tuki */
+    width: 100%;
+    padding: 20px 0;
+    color: #a8b2d1;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: absolute; /* Muutetaan takaisin, jotta sumennus toimii */
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    font-size: 18px;
+}
+
+/* Varmistetaan, että footer ei peitä sisältöä */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Estää sivusuuntaisen scrollauksen */
+}
+
+/* Wrapper, joka sisältää kaiken sisällön */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Varmistaa, että sivu on vähintään koko näytön korkuinen */
+}
+/* Pääsisältö, joka kasvaa, jotta footeri ei peitä sitä */
+.content {
+    flex: 1;
+   
+}
+.project-section {
+    min-height: 100vh; /* Varmistaa, että sisältö vie tilaa ja sivua voi selata */
+    padding-bottom: 100px; /* Jotta footer ei peitä sisältöä */
+}
+
+
+/* Navbar-logon muotoilu */
+.navbar-brand img {
+    height: 90px; /* Logon korkeus */
+    width: auto;
+    border-radius: 10px; /* Pyöristetyt reunat */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover-efekti */
+}
+
+/* Hover-efekti: suurennus ja varjo */
+.navbar-brand img:hover {
+    transform: scale(1.1); /* Hieman isommaksi hoveroidessa */
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3); /* Pehmeä varjo */
+}
+
+/* Yleiset painikkeet */
+.btn-theme {
+    background-color: #4f5d75;  /* Siniharmaa sävy */
+    border: none;
+    color: #ffffff;  /* Valkoinen teksti */
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 8px; /* Pyöristetyt reunat */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover-efekti */
+.btn-theme:hover {
+    background-color: #a683e3; /* Violetti korosteväri */
+    color: #0a192f; /* Tumma teksti hoverissa */
+    box-shadow: 0px 4px 10px rgba(166, 131, 227, 0.5); /* Hieno hohde */
+    transform: scale(1.05);
+}
+
+/* Aktiivinen tila (kun klikataan) */
+.btn-theme:active {
+    background-color: #372d66; /* Tummempi violetti */
+    color: #ffffff;
+}
+/* Projektien tiedot karusellien alla */
+.project-info {
+    background: rgba(10, 25, 47, 0.6); /* Tumma läpinäkyvä tausta */
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+    text-align: center;
+    color: #a8b2d1;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Projektien otsikot */
+.project-info h3 {
+    font-size: 22px;
+    color: #a683e3;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.btn-theme2 {
+    display: inline-block; /* Estää venymisen */
+    max-width: 100px; /* Estää liian suuren leveyden */
+    text-align: center;
+  
+}
+
+/* Napit */
+
+.btn-theme {
+    display: inline-block;
+    background: #a683e3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    align-items: center;
+}
+
+.btn-theme:hover {
+    background: #7a5cc1;
+}
+
+.project-content {
+    margin-top: 150px; /* Oletusmarginaali isommille näytöille */
+}
+
+/* Mobiilinäytöille pienempi marginaali */
+@media (max-width: 1024px) {
+    .project-content {
+        margin-top: 50px; /* Vähemmän marginaalia tableteilla */
+    }
+}
+
+@media (max-width: 768px) {
+    .project-content {
+        margin-top: 40px; /* Vielä vähemmän marginaalia pienillä näytöillä */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-content {
+        margin-top: 20px; /* Pienimmillä näytöillä lähes ei marginaalia */
+    }
+}
+
+
+/* Karuselli sisällä */
+.project-box .carousel {
+    border-radius: 10px;
+    overflow: hidden; /* Estää kuvan ulostyöntymisen */
+}
+
+/* Projektien tiedot – nyt osa samaa laatikkoa */
+.project-info {
+    margin-top: 15px;
+}
+
+/* Projektien otsikot */
+.project-info h3 {
+    font-size: 22px;
+    color: #a683e3;
+}
+
+/* Napit */
+.btn-theme {
+    display: inline-block;
+    background: #a683e3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-align: center;
+    white-space: nowrap;
+    margin: 0 auto; /* Keskitä nappi */
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.btn-theme:hover {
+    background: #7a5cc1;
+}
+
+/* Etusivun tyyli */
+.hero-section {
+    background: url('img/your-background-image.jpg') center/cover no-repeat;
+    position: relative;
+    padding: 120px 20px;
+    text-align: center;
+    color: white;
+}
+
+.hero-section .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Tummentava kerros */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Fade-in animaatio */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.fade-in-delay {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.5s ease-in-out forwards;
+}
+
+/* Typewriter-efekti */
+.typewriter::after {
+    content: "|";
+    animation: blink 0.8s infinite;
+    
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Button hover -efekti */
+.btn-theme {
+    display: inline-block;
+    background: #a683e3;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    margin: 10px;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.btn-theme:hover {
+    background: #7a5cc1;
+    transform: scale(1.05);
+}
+
+/* Jotta napit ovat samassa linjassa */
+.button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+/* Otsikon tyyli – gradient-teksti + hehku */
+.hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #a683e3, #ff6b6b);
+    background-clip: text; /* Standard */
+    -webkit-background-clip: text; /* For Chrome, Safari */
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent; /* Standard property */
+    text-shadow: 0px 0px 10px rgba(166, 131, 227, 0.8);
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideIn 1s ease-out forwards;
+}
+
+/* Korostettu osa otsikossa */
+.hero-title .highlight {
+    background: linear-gradient(45deg, #ff6b6b, #a683e3);
+    background-clip: text; /* Standard */
+    -webkit-background-clip: text; /* For Chrome, Safari */
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent; /* Standard property */
+    text-shadow: 0px 0px 15px rgba(255, 107, 107, 0.8);
+}
+
+/* Otsikon animaatio */
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+/* Muuttaa kaikkien linkkien värin */
+a {
+    color: #a683e3; /* Violetti */
+    text-decoration: none; /* Poistaa alleviivauksen */
+    transition: color 0.3s ease-in-out;
+}
+
+/* Linkin hover-efekti */
+a:hover {
+    color: #ff6b6b; /* Punertava hover-väri */
+    text-decoration: underline; /* Lisää alleviivauksen hoverissa */
+}
+
+.lead{
+    font-size: 25px;
+    font-weight:500 /* Suurempi oletuskoko teksteille */
+}
+/* Yhteydenottolomakkeen muotoilu */
+.contact-section {
+    text-align: center;
+    padding: 30px 20px;
+    background: rgba(15, 30, 60, 0.8);
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 50px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Lomakkeen otsikko */
+.contact-section h2 {
+    color: #a683e3;
+    font-size: 28px;
+}
+
+/* Lomake-elementtien väli */
+.contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Kenttien muotoilu */
+.contact-form .form-label {
+    color: #a8b2d1;
+    font-size: 18px;
+    text-align: left;
+    width: 100%;
+}
+
+.contact-form .form-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 500px; /* Estää venymisen liian leveäksi */
+}
+
+/* Lomakekenttä aktiivisena */
+.contact-form .form-control:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(166, 131, 227, 0.8);
+}
+
+/* Lähetä-nappi */
+.contact-form .btn-theme {
+    background: #a683e3;
+    color: white;
+    font-size: 18px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px; /* Lisää hieman väliä edelliseen kenttään */
+    width: 100%;
+    max-width: 200px; /* Estää liian leveyden */
+    text-align: center;
+}
+
+/* Napin hover-efekti */
+.contact-form .btn-theme:hover {
+    background: #7a5cc1;
+    transform: scale(1.05);
+}
+
+/* Responsiivisuus mobiilille */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .contact-form .form-control {
+        max-width: 100%;
+    }
+
+    .contact-form .btn-theme {
+        max-width: 100%;
+    }
+}
+/* Google Forms -lomakkeen responsiivisuus */
+.google-form-container {
+    width: 100%;
+    max-width: 600px; /* Maksimileveys desktopilla */
+    margin: 0 auto; /* Keskittää lomakkeen */
+    display: flex;
+    justify-content: center;
+}
+
+.google-form-container iframe {
+    width: 100%; /* Skaalaa koko leveydelle */
+    height: 700px; /* Lisää korkeutta, jotta lomake näkyy kokonaan */
+    border-radius: 10px; /* Pyöristetyt reunat */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsiivisuus mobiilille */
+@media (max-width: 768px) {
+    .google-form-container {
+        width: 95%; /* Pienillä näytöillä lomake käyttää enemmän tilaa */
+    }
+
+    .google-form-container iframe {
+        height: 850px; /* Lisäkorkeus mobiilissa */
+    }
+}
